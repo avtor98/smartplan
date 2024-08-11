@@ -1,0 +1,6 @@
+@mixin color-with-opacity($color, $opacity) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+    background-color: rgba($r, $g, $b, $opacity);
+}

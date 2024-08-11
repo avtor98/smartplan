@@ -1,0 +1,53 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="tel"]::-webkit-outer-spin-button,
+input[type="tel"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="tel"] {
+    -moz-appearance: textfield;
+}
+
+/* Для всех браузеров */
+input::placeholder {
+    color: #cdcdcd;
+}
+/* Для браузеров на основе WebKit (Chrome, Safari и др.) */
+input::-webkit-input-placeholder {
+    color: #cdcdcd;
+}
+/* Для Firefox (версии 4-18) */
+input:-moz-placeholder {
+    color: #cdcdcd;
+}
+/* Для Firefox (версии 19+) */
+input::-moz-placeholder {
+    color: #cdcdcd;
+}
+/* Для Internet Explorer 10+ */
+input:-ms-input-placeholder {
+    color: #cdcdcd;
+}
+
+input[type="tel"] {
+    font-size: 28px;
+    font-family: 'Helvetica-Regular', sans-serif;
+    transition: all .15s ease-in-out;
+    color: #333333;
+    width: 100%;
+    border: none;
+    outline: none;
+    &:focus,
+    &:active {
+        border: none;
+        outline: none;
+    }
+}

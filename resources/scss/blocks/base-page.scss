@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    margin: 0;
+    height: calc(100vh - 120px);
+    padding: 60px 60px 60px 160px;
+    background-color: $background-primary;
+    position: relative;
+    z-index: 999;
+    &-blur {
+        &-1 {
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            z-index: 1;
+            width: 505px;
+            height: 329px;
+            background-color: #1E69FE;
+            filter: blur(150px);
+        }
+        &-2 {
+            position: absolute;
+            top: 55%;
+            left: 36%;
+            z-index: 1;
+            width: 505px;
+            height: 329px;
+            border-radius: 50%;
+            background-color: #FF93EE;
+            filter: blur(150px);
+        }
+        &-3 {
+            position: absolute;
+            top: 30%;
+            left: 55%;
+            z-index: 1;
+            width: 696px;
+            height: 423px;
+            border-radius: 50%;
+            background-color: #005272;
+            filter: blur(150px);
+        }
+    }
+    &-container {
+        height: 100%;
+        display: flex;
+        gap: 240px;
+    }
+    &-left {
+        max-width: 400px;
+    }
+    &-right {
+        position: relative;
+        width: 100%;
+        z-index: 999;
+    }
+}

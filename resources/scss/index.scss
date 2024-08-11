@@ -1,0 +1,9 @@
+@import 'variables';
+@import 'fonts';
+@import 'mixin';
+@import 'base';
+@import './blocks/index.scss';
+
+body {
+    font-family: 'Helvetica-Regular', sans-serif;
+}
