@@ -1,0 +1,138 @@
+:root {
+    --success-color: #4caf50; /* Зеленый цвет для успешного ввода */
+    --failure-color: #f44336; /* Красный цвет для неудачного ввода */
+    --box-shadow-focus: 0 0 0 2px #dce8ff;
+    --box-shadow-success: 0 0 6px 2px rgba(76, 175, 80, 0.3);
+    --box-shadow-failure: 0 0 6px 2px rgba(244, 67, 54, 0.3);
+    --transition-duration: 300ms;
+    --transition-ease: ease-in-out;
+}
+.slide-out {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.slide-out.hidden {
+    opacity: 0;
+    transform: translateY(120px);
+}
+
+.smart-plan {
+    &__code {
+        transition: all .25s ease;
+        top: 60%;
+    }
+    &__forms {
+        transition: all .25s ease;
+        top: 40%;
+    }
+    &__fieldset, &__title, &__subtext, &__button, &__subtext--small {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    &__info.slide-in &__title {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s;
+    }
+
+    &__info.slide-in &__subtext {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.3s;
+    }
+
+    &__info.slide-in &__fieldset {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.4s;
+    }
+
+    &__info.slide-in &__button {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.5s;
+    }
+
+    &__info.slide-in &__subtext--small {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.6s;
+    }
+    &__fieldset {
+        gap: 5px;
+        display: flex;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    &__box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        width: 96px;
+        border-radius: 10px;
+        overflow: hidden;
+        will-change: transform;
+        transition: box-shadow var(--transition-duration) var(--transition-ease), background-color var(--transition-duration) var(--transition-ease);
+        &:focus-within {
+            box-shadow: 0 0 0 2px #dce8ff;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        &::before {
+            background: $white;
+            transition: background-color var(--transition-duration) var(--transition-ease);
+        }
+        &-input {
+            position: relative;
+            border: 0;
+            outline: 0;
+            font-size: 28px;
+            font-family: 'Helvetica-Bold', sans-serif;
+            color: $text-dark;
+            background-color: transparent;
+            text-align: center;
+            &::placeholder {
+                color: #dce8ff;
+            }
+        }
+    }
+}
+
+.animate-success .smart-plan__box {
+    box-shadow: var(--box-shadow-success);
+}
+
+.animate-success .smart-plan__box::before {
+    background-color: var(--success-color);
+    transition: background-color var(--transition-duration);
+}
+
+.animate-failure .smart-plan__box {
+    box-shadow: var(--box-shadow-failure);
+}
+
+.animate-failure .smart-plan__box::before {
+    background-color: var(--failure-color);
+    transition: background-color var(--transition-duration);
+}
+
+.smart-plan__fieldset.animate-success,
+.smart-plan__fieldset.animate-failure {
+    transition: all var(--transition-duration) var(--transition-ease);
+}

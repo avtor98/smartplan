@@ -10,6 +10,7 @@ body {
     background-color: $background-primary;
     position: relative;
     z-index: 999;
+    overflow: hidden;
     &-blur {
         &-1 {
             position: absolute;
@@ -50,11 +51,65 @@ body {
         gap: 240px;
     }
     &-left {
+        min-width: 400px;
         max-width: 400px;
     }
     &-right {
         position: relative;
         width: 100%;
         z-index: 999;
+        opacity: 0;
+        transform: translateX(50px) scale(0.95);
+        filter: blur(10px);
+        transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+            opacity 0.65s ease-in-out,
+            filter 0.65s ease-in-out;
+    }
+    .section-right.slide-in {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+    }
+
+    .smart-plan__carousel-title, .smart-plan__carousel-subtitle {
+        opacity: 0;
+        transform: translateY(120px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .section-right.slide-in .smart-plan__carousel-title {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.15s;
+    }
+
+    .section-right.slide-in .smart-plan__carousel-subtitle {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.25s;
+    }
+
+    .smart-plan__carousel-icon, .smart-plan__carousel-nav {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
+
+    .section-right.slide-in .smart-plan__carousel-icon {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.45s;
+    }
+
+    .section-right.slide-in .smart-plan__carousel-nav {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.5s;
+    }
+
+    /* Анимация для изображений карусели */
+    .smart-plan__carousel-image {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
     }
 }

@@ -1,0 +1,23 @@
+@media (max-width: 1920px) {
+    .section {
+        transition: all .25s ease;
+        padding: 30px 30px 30px 80px;
+        height: calc(100vh - 60px);
+        &-container {
+            gap: 120px;
+        }
+    }
+    .smart-plan {
+        &__info {
+            top: 35%;
+        }
+        &__code {
+            transition: all .25s ease;
+            top: 40% !important;
+        }
+        &__forms {
+            transition: all .25s ease;
+            top: 25% !important;
+        }
+    }
+}

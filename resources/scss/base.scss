@@ -16,6 +16,33 @@ input[type="tel"] {
     -moz-appearance: textfield;
 }
 
+input[type="text"]::-webkit-outer-spin-button,
+input[type="text"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="text"] {
+    -moz-appearance: textfield;
+}
+
+input[type="email"]::-webkit-outer-spin-button,
+input[type="email"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="email"] {
+    -moz-appearance: textfield;
+}
+
+input[type="password"]::-webkit-outer-spin-button,
+input[type="password"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="password"] {
+    -moz-appearance: textfield;
+}
+
 /* Для всех браузеров */
 input::placeholder {
     color: #cdcdcd;

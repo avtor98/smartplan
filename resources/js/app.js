@@ -1,7 +1,9 @@
 import './bootstrap';
-//import './checkbox.js';
 import './phone-code.js';
 import './carousel.js';
+import './sms.js';
+import './validate.js';
+import './animate.js'
 
 
 //Подключение jQuery
@@ -11,9 +13,9 @@ window.$ = jQuery;
 import { Common } from './modules/common.js';
 
 (function($) {
-    
+
 	$(document).ready(function() {
-        Common(jQuery);	
+        Common(jQuery);
 	});
 
 })(jQuery);
