@@ -12,6 +12,8 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "imask": "^7.6.1"
+        "animate.css": "^4.1.1",
+        "imask": "^7.6.1",
+        "jquery": "^3.7.1"
     }
 }

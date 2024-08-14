@@ -4,3 +4,26 @@
     $b: blue($color);
     background-color: rgba($r, $g, $b, $opacity);
 }
+
+// Media query
+$breakpoints: (
+    "xs": 360px,
+    "sm": 480px,
+    "md": 640px,
+    "lg": 960px,
+    "xl": 1200px,
+    "xxl": 1920px,
+    "xxxl": 2048px,
+);
+
+@mixin mq($width, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == min {
+            $width: $width;
+        } @else  { $width: $width - 1px; }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}

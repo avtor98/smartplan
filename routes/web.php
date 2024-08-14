@@ -5,7 +5,11 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
-    return view('registration');
+    return view('layouts/index');
+});
+
+Route::get('/index', function () {
+    return view('layouts/index');
 });
 
 Route::get('/registration', [RegisterController::class, 'showRegistrationForm'])->name('registration');

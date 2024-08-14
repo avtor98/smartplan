@@ -2,8 +2,14 @@
 @import 'fonts';
 @import 'mixin';
 @import 'base';
+@import 'animate.css';
 @import './blocks/index.scss';
+@import './modules/index.scss';
+@import './pages/index.scss';
+
 
 body {
     font-family: 'Helvetica-Regular', sans-serif;
+
+    //background-color: #999;
 }

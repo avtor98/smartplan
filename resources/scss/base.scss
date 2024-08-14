@@ -51,3 +51,100 @@ input[type="tel"] {
         outline: none;
     }
 }
+
+.l-main{
+    position: relative;
+
+	//height: 100%; 
+	//display: flex;
+
+	background-color: #052029;
+	z-index: 1;
+
+    width: 100vw;
+    //min-width: 360px;
+
+    &-wrapper{
+        //width: 100%;
+        margin: 0 60px;
+
+        @include mq('xxxl') {
+            margin: 0 40px;
+            width: calc(100vw - 80px);
+        }
+
+        @include mq('xxl') {
+            margin: 0 20px;
+            width: calc(100vw - 40px);
+        }
+
+        @include mq('xl') {
+            margin: 0 10px;
+            width: calc(100vw - 20px);
+        }
+
+        @include mq('sm') {
+            margin: 0 8px;
+            width: calc(100vw - 16px);
+        }
+    }
+
+    &-content{
+        margin: 0 100px;
+
+        @include mq('xxxl') {
+            margin: 0 60px;
+        }
+
+        @include mq('xxl') {
+            margin: 0 40px;
+        }
+
+        @include mq('xl') {
+            margin: 0 20px;
+        }
+
+        @include mq('lg') {
+            margin: 0 30px;
+        }
+
+        @include mq('md') {
+            margin: 0 20px;
+        }
+
+        @include mq('sm') {
+            margin: 0 18px;
+        }
+    }
+
+
+    /*
+	@media screen and (max-width: 1920px) {
+		display: grid;
+		grid-template-columns: 1fr 1500px;
+	}
+
+	@media screen and (max-width: 1800px) {
+		grid-template-columns: 1fr 1440px;
+	}
+
+	@media screen and (max-width: 1700px) {
+		grid-template-columns: 290px calc(100vw - 300px);
+	}
+
+	@include mq('xl') {
+		display: block;
+		background-color: transparent;
+		z-index: auto;
+	}
+        */
+}
+
+body{
+    //overflow: hidden;
+
+
+    &.overflow {
+		overflow: hidden;
+	}
+}
