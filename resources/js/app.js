@@ -4,7 +4,7 @@ import './carousel.js';
 import './sms.js';
 import './validate.js';
 import './animate.js'
-
+import "jquery-mask-plugin";
 
 //Подключение jQuery
 import jQuery from 'jquery';

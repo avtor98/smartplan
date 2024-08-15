@@ -1,5 +1,6 @@
 export function Common($) {
 
+    
     //Кнопка-бургер (меню)
     $('#burger_button').click(function(){
         //$(this).toggleClass('open_mobile_menu');
@@ -20,5 +21,37 @@ export function Common($) {
     //Пункт решения в мобильном меню
     $('#toggle_menu').click(function(){
         $(this).toggleClass('--open_ex');
+    });
+
+    //Открытие формы демоверсии
+    $('#btn_open_form').click(function(){
+        $('#phone-form').toggleClass('--open_form');
+
+        setTimeout(function(){
+
+            $('.first_block').removeClass('--overflow');
+        
+        }, 1500);
+    });
+
+    // Маска телефона
+    $('#phone-input-mobile').mask('+7 (000) 000 00-00', {
+        clearIfNotMatch: false,
+        onKeyPress: function(cep, event, currentField, options) {
+            if (cep.length === 5) {
+                let lastChar = Number(cep[cep.length - 1]);
+                if (lastChar === 7 || lastChar === 8) {
+                    $(currentField).val('+7 (');
+                }
+            }
+        }
+    }).on('focus', function(){
+        $(this).val('+7 (');
+
+        var self = this;
+
+        setTimeout(() => {
+            self.setSelectionRange(4, 4);
+        }, 100);
     });
 }

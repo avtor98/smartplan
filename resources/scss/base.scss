@@ -64,7 +64,8 @@ input:-ms-input-placeholder {
     color: #cdcdcd;
 }
 
-input[type="tel"] {
+input[type="tel"], 
+input[type="text"] {
     font-size: 28px;
     font-family: 'Helvetica-Regular', sans-serif;
     transition: all .15s ease-in-out;
@@ -174,4 +175,13 @@ body{
     &.overflow {
 		overflow: hidden;
 	}
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.btn{
+
+    
 }
