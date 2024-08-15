@@ -6,7 +6,11 @@
 
 @section('content')
     @include('include.header')
-    <div class = "main_page">
-    <p>Hello World!</p>
-    </div>
+
+    <section class = "l-main main_page">
+        <div class="l-main-wrapper first_block">
+
+        </div>
+    </section>
+
 @endsection

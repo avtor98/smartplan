@@ -1,4 +1,4 @@
-<header class="header l-main open_mobile_menu">
+<header class="header l-main">
     <div class="l-main-wrapper">
         <div class="l-main-content">
             <div id="burger_button" class="header-mobile-button">

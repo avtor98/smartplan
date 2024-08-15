@@ -1,8 +1,14 @@
 .main_page{
-    background-color: #999;
-    height: 1500px;
 
-    p{
-        margin: 0;
+    .first_block{
+        //width: 100%;
+        border-radius: 60px;
+
+        height: 949px;
+
+        background-image: url("/public/images/pages/main_block_bg.svg");
+        background-repeat: no-repeat;
     }
+
 }
+
