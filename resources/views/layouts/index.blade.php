@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     @include('include.header')
 
     <section class = "l-main main_page">
@@ -79,10 +80,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="second_block">
-            
-        </div>
     </section>
+
+    @include('include.footer')
 
 @endsection
