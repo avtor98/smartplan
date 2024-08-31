@@ -12,10 +12,15 @@ export function Common($) {
             {
                 $('#toggle_menu').removeClass('--open_ex');
             }
+
+            $('body').css('overflow-y', 'auto');
+        }
+        else{
+            $('body').css('overflow-y', 'hidden');
         }
 
         $('.header').toggleClass('--open_mobile_menu');
-        $('body').toggleClass('overflow');
+        //$('body').toggleClass('overflow');
     });
 
     //Пункт решения в мобильном меню
@@ -35,6 +40,7 @@ export function Common($) {
     });
 
     // Маска телефона
+    /*
     $('#phone-input-mobile').mask('+7 (000) 000 00-00', {
         clearIfNotMatch: false,
         onKeyPress: function(cep, event, currentField, options) {
@@ -53,5 +59,22 @@ export function Common($) {
         setTimeout(() => {
             self.setSelectionRange(4, 4);
         }, 100);
+    });
+    */
+
+    //Открытие модальных окон
+    $('.footer-links__link').click(function(){
+        $('.modal_full[data-modal=' + $(this).data("modal") + ']').removeClass('--fade');
+        //$('body').toggleClass('overflow');
+        $('body').css('overflow-y', 'hidden');
+    });
+
+    //Закрытие модальных окон
+    $('.modal_full-wrapper-btn_close').click(function(){
+        var modal_type = $(this).closest('.modal_full').data("modal");
+        $('.modal_full[data-modal=' + modal_type + ']').addClass('--fade');
+        $('.modal_full[data-modal=' + modal_type + ']').animate({scrollTop: 0}, 400);
+        //$('body').toggleClass('overflow');
+        $('body').css('overflow-y', 'auto');
     });
 }

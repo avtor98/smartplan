@@ -1,9 +1,11 @@
 import './bootstrap';
-import './phone-code.js';
-import './carousel.js';
-import './sms.js';
-import './validate.js';
-import './animate.js'
+import './modules/swiiper-main.js'
+
+//import './phone-code.js';
+//import './carousel.js';
+//import './sms.js';
+//import './validate.js';
+//import './animate.js'
 import "jquery-mask-plugin";
 
 //Подключение jQuery

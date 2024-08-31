@@ -15,7 +15,7 @@
                 <div class="footer-block">
                     <p class="footer-block-title">Для звонков из РФ</p>
                     <a href="tel:+78009999999">
-                        <span>+7 [800] 999 99-99</span>
+                        <span>+7 (800) 999 99-99</span>
                     </a>
                 </div>
             </div>
@@ -67,16 +67,17 @@
                 </p>
             </div>
             <div class="footer-links">
-                <p id="footer_agreement" class="footer-links__link">Договор оферты</p>
-                <p id="footer_details" class="footer-links__link">Реквизиты</p>
-                <p id="footer_policy" class="footer-links__link">Политика конфиденциальности</p>
-                <p id="footer_refusal" class="footer-links__link">Отказ от услуг</p>
-                <p id="footer_pays" class="footer-links__link">Способы оплаты</p>
-                <p id="footer_rules" class="footer-links__link">Правила приема платежей</p>
-                <p id="footer_consent" class="footer-links__link">Согласие на обработку персональных данных</p>
-                <p id="footer_lic" class="footer-links__link">Лицензия</p>
-
+                <p class="footer-links__link" data-modal="agreement">Договор оферты</p>
+                <p class="footer-links__link" data-modal="details">Реквизиты</p>
+                <p class="footer-links__link" data-modal="policy">Политика конфиденциальности</p>
+                <p class="footer-links__link" data-modal="refusal">Отказ от услуг</p>
+                <p class="footer-links__link" data-modal="pays">Способы оплаты</p>
+                <p class="footer-links__link" data-modal="rules">Правила приема платежей</p>
+                <p class="footer-links__link" data-modal="consent">Согласие на обработку персональных данных</p>
+                <p class="footer-links__link" data-modal="licence">Лицензия</p>
             </div>
         </div>
     </div>
 </footer>
+
+@include('include.modals')
