@@ -395,6 +395,8 @@
         }
 
         &-reg{
+            background-color: #1E69FE;
+
             @include mq('xl') {
                 right: 30px;
             }
@@ -406,8 +408,6 @@
             @include mq('md') {
                 right: auto;
             }
-
-            background-color: #1E69FE;
 
             &:hover{
                 background-color: #fff;
@@ -424,9 +424,7 @@
                     }
                 }
             }
-        }
-
-        
+        }        
     }
 
     &-copirite{
@@ -573,13 +571,15 @@
         @include mq('lg') {
             margin-top: 10px;
             grid-column: 1/-1;
-            grid-row: 8/9;
+            grid-row: 5/6;
 
             row-gap: 20px;
             column-gap: 30px;
         }
 
         @include mq('md') {
+            grid-row: 8/9;
+
             margin-top: 0;
             row-gap: 30px;
             column-gap: 15px;

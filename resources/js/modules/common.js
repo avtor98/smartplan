@@ -54,4 +54,18 @@ export function Common($) {
             self.setSelectionRange(4, 4);
         }, 100);
     });
+
+    //Открытие модальных окон
+    $('.footer-links__link').click(function(){
+        $('.modal_full[data-modal=' + $(this).data("modal") + ']').removeClass('--fade');
+        $('body').toggleClass('overflow');
+    });
+
+    //Закрытие модальных окон
+    $('.modal_full-wrapper-btn_close').click(function(){
+        var modal_type = $(this).closest('.modal_full').data("modal");
+        $('.modal_full[data-modal=' + modal_type + ']').addClass('--fade');
+        $('.modal_full[data-modal=' + modal_type + ']').animate({scrollTop: 0}, 400);
+        $('body').toggleClass('overflow');
+    });
 }
