@@ -50,6 +50,7 @@
                             <div class="main-block-content-menu-link-image __all"></div>
                             <p>Все<br>решения</p>
                         </a>
+                        <div class="main-block-content-menu-link-scroll"></div>
                     </div>
                     <div class="main-block-back"></div>
                     <div class="main-block-video">
