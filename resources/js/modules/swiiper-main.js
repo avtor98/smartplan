@@ -123,4 +123,22 @@ function setActiveScreen() {
 function setWrapHeight() { 
     let headerHeight = document.querySelector('.header').scrollHeight;    
     document.documentElement.style.setProperty('--swiper-height', (window.innerHeight - headerHeight) + 'px');
+
+    if(window.innerWidth < 1850){
+        let margin = window.innerHeight - headerHeight;
+        margin -= document.querySelector('.main-block-content-menu').scrollHeight;
+        margin -= document.querySelector('.main-block-title').scrollHeight;
+
+        if(window.innerWidth < 1200)
+            margin -= (30 + 30 + 50);
+        else if(window.innerWidth < 960)
+            margin -= (20 + 30 + 50);
+        else
+            margin -= (30 + 40 + 60);
+
+        margin /= 2; 
+        
+        document.documentElement.style.setProperty('--margin-title', margin + 'px');
+    }
+
 }
