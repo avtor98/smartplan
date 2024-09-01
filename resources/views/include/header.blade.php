@@ -1,48 +1,10 @@
 <header class="header l-main">
     <div class="l-main-wrapper">
         <div class="l-main-content">
-            <div id="burger_button" class="header-mobile-button">
-                <div class = "header-mobile-button-container">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>    
-            </div>
             <a href="/index" class="header__icon"></a>
             <div class=header-menu>
                 <ul>
-                    <li>
-                        <a href="/" class="header-menu__main_link">Решения</a>
-                        <div class="header-ex-menu">
-                            <div class="header-ex-menu-container">
-                                <div class="header-ex-menu-container-top">
-                                    <a href="/" class="header-ex-menu-container-top-link">
-                                        <div class="header-ex-menu-container-top-link-image __manage"></div>
-                                        <p>Управление объектами</p>
-                                    </a>
-                                    <a href="/" class="header-ex-menu-container-top-link ">
-                                        <div class="header-ex-menu-container-top-link-image __genplan"></div>
-                                        <p>Интерактивный генплан</p>
-                                    </a>
-                                    <a href="/" class="header-ex-menu-container-top-link">
-                                        <div class="header-ex-menu-container-top-link-image __reserve"></div>
-                                        <p>Online бронирование</p>
-                                    </a>
-                                    <a href="/" class="header-ex-menu-container-top-link">
-                                        <div class="header-ex-menu-container-top-link-image __calc"></div>
-                                        <p>Калькулятор ипотеки</p>
-                                    </a>
-                                    <a href="/" class="header-ex-menu-container-top-link">
-                                        <div class="header-ex-menu-container-top-link-image __fids"></div>
-                                        <p>Конструктор ФИДов</p>
-                                    </a>
-                                </div>
-                                <div class="header-ex-menu-container-bottom">
-                                    <a href="/">Карта всех приложений Smart plan</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    <li><a href="/" class="header-menu__main_link">Решения</a></li>
                     <li><a href="/" class="header-menu__main_link">Кейсы</a></li>
                     <li><a href="/" class="header-menu__main_link">Блог</a></li>
                     <li><a href="/" class="header-menu__main_link">Контакты</a></li>
@@ -51,14 +13,18 @@
             </div>
             <div class="header-right">
                 <a href="tel:+78009999999" class="header-right-phone">
-                    <span>+7 [800] 999 99-99</span>
+                    <span>+7 (800) 999 99-99</span>
                 </a>
-                <a href="/login" class="header-right-btn header-right-login">
+                <a href="/login" class="header-right-btn">
                     <span>Войти</span>
                 </a>
-                <a href="/registration" class="header-right-btn header-right-reg">
-                    <span>Регистрация</span>
-                </a>
+            </div>
+            <div id="burger_button" class="header-mobile-button">
+                <div class = "header-mobile-button-container">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>    
             </div>
         </div>
     </div>
@@ -119,7 +85,7 @@
                 <div class = "header-mobile-menu-link-item">
                     <p>Для звонков из РФ</p>
                     <a href="tel:+78009999999" class="header-mobile-menu-link-item">
-                        <span>+7 [800] 999 99-99</span>
+                        <span>+7 (800) 999 99-99</span>
                     </a>
                 </div>
                 <div class = "header-mobile-menu-link-item">

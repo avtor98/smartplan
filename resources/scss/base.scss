@@ -46,6 +46,7 @@ input[type="password"] {
 /* Для всех браузеров */
 input::placeholder {
     color: #cdcdcd;
+    position: fixed;
 }
 /* Для браузеров на основе WebKit (Chrome, Safari и др.) */
 input::-webkit-input-placeholder {
@@ -86,7 +87,7 @@ input[type="text"] {
 	//height: 100%; 
 	//display: flex;
 
-	background-color: #052029;
+	background-color: #EFF0F0;
 	z-index: 1;
 
     //width: 100vw;
@@ -111,9 +112,14 @@ input[type="text"] {
             width: calc(100vw - 20px);
         }
 
+        @include mq('md') {
+            margin: 0 15px;
+            width: calc(100vw - 30px);
+        }
+
         @include mq('sm') {
-            margin: 0 8px;
-            width: calc(100vw - 16px);
+            margin: 0 10px;
+            width: calc(100vw - 20px);
         }
     }
 
@@ -133,15 +139,15 @@ input[type="text"] {
         }
 
         @include mq('lg') {
-            margin: 0 30px;
+            margin: 0 10px;
         }
 
         @include mq('md') {
-            margin: 0 20px;
+            margin: 0 15px;
         }
 
         @include mq('sm') {
-            margin: 0 18px;
+            margin: 0 10px;
         }
     }
 
@@ -169,12 +175,8 @@ input[type="text"] {
 }
 
 body{
-    //overflow: hidden;
-
-
-    &.overflow {
-		overflow: hidden;
-	}
+    background-color: #EFF0F0;
+    overflow-x: hidden;
 
     a{
         text-decoration: none;

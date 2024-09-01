@@ -15,7 +15,7 @@
                 <div class="footer-block">
                     <p class="footer-block-title">Для звонков из РФ</p>
                     <a href="tel:+78009999999">
-                        <span>+7 [800] 999 99-99</span>
+                        <span>+7 (800) 999 99-99</span>
                     </a>
                 </div>
             </div>

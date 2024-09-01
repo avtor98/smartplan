@@ -9,79 +9,121 @@
     @include('include.header')
 
     <section class = "l-main main_page">
-        <div class="l-main-wrapper first_block --overflow">
-            <div class="first_block-content">
-                <div class="first_block-content-left">
-                    <p class="first_block-content-left-des">Для МКД и ИЖС</p>
-                    <h1 class="first_block-content-left-title">
-                        Экосистема<br>
-                        цифровых сервисов<br>
-                        для девелоперов
-                    </h1>
-                    <div class="first_block-content-left-form">
-                        <form id="phone-form">
-                            <div class="first_block-content-left-form-container">
-                                <input type="text" class="form-input-text" name="name" placeholder="Имя" required>
 
-                                <div class="smart-plan__input">
-                                    <div class="smart-plan__input-label" id="country-selector">
-                                        <div class="smart-plan__input-flag" id="selected-flag" style="background-image: url('{{ asset('images/country/ru.svg') }}');"></div>
-                                        <div class="smart-plan__input-num" id="selected-code">+7</div>
-                                    </div>
-                                    <div class="smart-plan__input-container">
-                                        <input type="tel" placeholder="(000) 000-00-00" id="phone-input">
-                                    </div>
-                                    <div class="smart-plan__phone-dropdown" id="country-dropdown-main">
-                                        <div class="smart-plan__phone-dropdown-items" id="country-dropdown"></div>
-                                    </div>
-                                </div>
+        <section id = "page__wrapper">
 
-                                <input type="tel" class="form-input-text phone" placeholder="+7 (_ _ _) _ _ _  _ _-_ _" id="phone-input-mobile">
-                            </div>
+            <div class="main_page__content swiper">
 
-                            <div id="btn_open_form" class="first_block-content-left-form-btn">
-                                <span>Записаться на демо</span>
-                            </div>
-                            <button class="form-input-btn">
-                                <span>Записаться на демо</span>
-                            </button>
-                            <p class="first_block-content-left-form-rules">
-                                Нажимая кнопку &laquo;Записаться на&nbsp;демо&raquo;, вы&nbsp;даете согласие на&nbsp;обработку ваших персональных данных
-                            </p>
-                        </form>
+                <div class="main_page__content-btn" style="opacity: 0">
+                    <span>Попробовать бесплатно</span>
+                </div>
+
+                <div class="main-block">
+                    <div class="main-block-title">
+                        <h1>Экосистема
+                            цифровых сервисов 
+                            для девелоперов,
+                            <span>в которой есть все</span></h1>
+                    </div>
+                    <div class="main-block-content-menu" style="opacity: 0">
+                        <a href="/" class="main-block-content-menu-link">
+                            <div class="main-block-content-menu-link-image __manage"></div>
+                            <p>Система управления<br>объектами</p>
+                        </a>
+                        <a href="/" class="main-block-content-menu-link ">
+                            <div class="main-block-content-menu-link-image __genplan"></div>
+                            <p>Интерактивный<br>генплан</p>
+                        </a>
+                        <a href="/" class="main-block-content-menu-link">
+                            <div class="main-block-content-menu-link-image __fids"></div>
+                            <p>Экспорт<br>в агрегаторы</p>
+                        </a>
+                        <a href="/" class="main-block-content-menu-link">
+                            <div class="main-block-content-menu-link-image __reserve"></div>
+                            <p>Online<br>бронирование</p>
+                        </a>
+                        <a href="/" class="main-block-content-menu-link">
+                            <div class="main-block-content-menu-link-image __calc"></div>
+                            <p>Калькулятор<br>ипотеки</p>
+                        </a>
+                        <a href="/" class="main-block-content-menu-link">
+                            <div class="main-block-content-menu-link-image __all"></div>
+                            <p>Все<br>решения</p>
+                        </a>
+                    </div>
+                    <div class="main-block-back"></div>
+                    <div class="main-block-video">
+                        <video loop  autoplay muted>
+                            <source src="{{ asset('video/main_video.mp4') }}" type="video/mp4">
+                            Видео не поддерживается вашим браузером.
+                        </video>
                     </div>
                 </div>
-                <div class="first_block-content-menu">
-                    <a href="/" class="first_block-content-menu-link">
-                        <div class="first_block-content-menu-link-image __manage"></div>
-                        <p>Управление<br>объектами</p>
-                    </a>
-                    <a href="/" class="first_block-content-menu-link ">
-                        <div class="first_block-content-menu-link-image __genplan"></div>
-                        <p>Интерактивный<br>генплан</p>
-                    </a>
-                    <a href="/" class="first_block-content-menu-link">
-                        <div class="first_block-content-menu-link-image __fids"></div>
-                        <p>Конструктор<br>ФИДов</p>
-                    </a>
-                    <a href="/" class="first_block-content-menu-link">
-                        <div class="first_block-content-menu-link-image __reserve"></div>
-                        <p>Online<br>бронирование</p>
-                    </a>
-                    <a href="/" class="first_block-content-menu-link">
-                        <div class="first_block-content-menu-link-image __calc"></div>
-                        <p>Калькулятор<br>ипотеки</p>
-                    </a>
-                    <a href="/" class="first_block-content-menu-link">
-                        <div class="first_block-content-menu-link-image __all"></div>
-                        <p>Все<br>решения</p>
-                    </a>
-                    <div class="first_block-content-menu-link-scroll"></div>
+
+                <div class="swiper-wrapper">
+                    <div class="visibility-actions">
+                        <!--Подменяющий блок в слайдере для первой страницы-->
+                    </div>
+
+                    <div class="visibility-actions">
+                        <p style = "transition-delay: 2.5s">Создайте 
+                        и наполните 
+                        свой объект
+                        недвижимости 
+                        <span>в одно касание</span></p>
+                    </div>
+
+                    <div class="visibility-actions --right">
+                        <p><span>Меняйте цены
+                        хоть каждую минуту –</span>
+                        они изменятся везде:
+                        на сайте, в прайсах,
+                        в фидах</p>
+                    </div>
+
+                    <div class="visibility-actions">
+                        <p>Интерактивный 
+                        генплан и каталог
+                        для сайта <span>за 15 минут</span>
+                        без кода и сложных
+                        инструкций</p>
+                    </div>
+
+                    <div class="visibility-actions --right">
+                        <p>Настройте фиды
+                        <span>во все агрегаторы </span>
+                        в одно касание</p>
+                    </div>
+
+                    <div class="visibility-actions --center-block">
+                        <div class="visibility-actions-content">
+                            <h1 class="visibility-actions-content-title">
+                                Smart plan <span>создан<br>
+                                из болей </span>девелоперов<br>
+                                и их Клиентов
+                            </h1>
+                            <div class="--pain-container">
+                                <div class="--pain-container-btn">
+                                    <span>Боль</span>
+                                </div>
+                                <div class="--pain-container-swipe">
+                                    <div class="--pain-container-swipe-toggle"></div>
+                                </div>
+                                <div class="--pain-container-btn">
+                                    <span>Решение</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-        </div>
+
+        </section>
+    
     </section>
 
     @include('include.footer')
+
 
 @endsection
