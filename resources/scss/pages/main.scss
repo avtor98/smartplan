@@ -1062,7 +1062,9 @@
             }
 
             &-title{
-                margin-top: 40px;
+                margin-top: var(--margin-title);
+
+                //margin-top: 40px;
 
                 @include mq('xxl') {
                     margin-top: var(--margin-title);
@@ -1315,6 +1317,9 @@
                         background-repeat: no-repeat;
 
                         @include mq('xxl') {
+                            max-width: 80px;
+                            max-height: 80px;
+
                             width: 10.8vh;
                             height: 10.8vh;
                         }
@@ -1380,8 +1385,10 @@
             &-back{
                 position: absolute;
                 bottom: 0;
-                left: 50%;
-                transform: translateX(-50%) translateY(30%);
+                //left: 50%;
+                //transform: translateX(-50%) translateY(30%);
+
+                //transform: translateY(70%);
 
                 //min-width: calc(5 * var(--gap-menu-item) + 600px);
                 //min-height: calc(100px + 40px);
@@ -1389,17 +1396,26 @@
                 //width: calc(5 * var(--gap-menu-item) + 6 * 25vh);
                 //height: calc(25vh + 40px + 100px);
 
-                width: calc(2.385 * (var(--swiper-height) - 2*120px));
-                height: calc(var(--swiper-height) - 2*120px);
+                //width: calc(2.385 * (var(--swiper-height) - 2*120px));
+                //height: calc(var(--swiper-height) - 2*120px);
 
-                //background-image: url("/public/images/svg/main_bg.svg");
+                width: 100vw;
+                height: var(--swiper-height);
+
                 background-image: url("/public/images/svg/main_bg_second.svg");
-                background-position: center;
+                background-position-x: center;
+                background-position-y: bottom -50vh;
                 background-repeat: no-repeat;
-                background-size: 100% 100%;
+                background-size: 100vw 118vh;
 
                 transition: 1.5s;
                 z-index: 2;
+
+                @include mq('lg') {
+                    background-image: url("/public/images/svg/main_bg.svg");
+                    background-position-y: bottom;
+                    background-size: 1920px 60vh;
+                }
             }
 
             &-video{
@@ -1442,7 +1458,7 @@
 
         &-btn{
             position: absolute;
-            top: calc(4 * (1.2 * 6.4vh) + 40px + 40px);
+            top: calc(4 * (1.2 * 6.4vh) + var(--margin-title) + 58px);
             left: 50%;
             transform: translateX(-50%);
 
@@ -1866,15 +1882,15 @@ html
             }
 
             @include mq('lg') {
-                //!!!Добавить!!!
-            }
-
-            @include mq('md') {
-                transform: translateY(-100px);
+                transform: translateX(-50%) translateY(-100px);
                 opacity: 0;
                 visibility: hidden;
 
                 transition: 1s ease-in-out;
+            }
+
+            @include mq('md') {
+                transform: translateY(-100px);
             }
         }
 
@@ -1919,13 +1935,25 @@ html
         }
 
         .main-block-back{
+            /*
             height: calc(var(--swiper-height) - 2 * 60px);
             width: calc(2.385 * (var(--swiper-height) - 2 * 60px));
 
             bottom: calc(var(--swiper-height) / 2);
             transform: translateX(-50%) translateY(50%);
+            
 
-            transition-delay: .4s;
+            //bottom: 50%;
+            //transform: translateY(50%);
+            */
+            
+            @media screen and (min-width: 959px) {
+                background-image: url("/public/images/svg/main_bg_second.svg");
+                background-position-y: center;
+                background-size: 100vw var(--swiper-height);
+
+                transition-delay: .4s;
+            }
         }
 
         &:not(.no-slide-pagination){
