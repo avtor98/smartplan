@@ -124,20 +124,21 @@ function setWrapHeight() {
     let headerHeight = document.querySelector('.header').scrollHeight;    
     document.documentElement.style.setProperty('--swiper-height', (window.innerHeight - headerHeight) + 'px');
 
-    let margin = window.innerHeight - headerHeight;
-    margin -= document.querySelector('.main-block-content-menu').scrollHeight;
-    margin -= document.querySelector('.main-block-title').scrollHeight;
-    
-    if(window.innerWidth < 1850)
-        margin -= (30 + 40 + 60);
-    else if(window.innerWidth < 1200)
-        margin -= (30 + 30 + 50);
-    else if(window.innerWidth < 960)
-        margin -= (20 + 30 + 50);
-    else
-        margin -= (40 + 58 + 80);
+    if(window.innerWidth < 1850){
+        let margin = window.innerHeight - headerHeight;
+        margin -= document.querySelector('.main-block-content-menu').scrollHeight;
+        margin -= document.querySelector('.main-block-title').scrollHeight;
 
-    margin /= 2; 
+        if(window.innerWidth < 1200)
+            margin -= (30 + 30 + 50);
+        else if(window.innerWidth < 960)
+            margin -= (0 + 30 + 50);
+        else
+            margin -= (30 + 40 + 60);
+
+        margin /= 2; 
         
-    document.documentElement.style.setProperty('--margin-title', margin + 'px');
+        document.documentElement.style.setProperty('--margin-title', margin + 'px');
+    }
+
 }

@@ -13,7 +13,8 @@ export function Common($) {
                 $('#toggle_menu').removeClass('--open_ex');
             }
 
-            $('body').css('overflow-y', 'auto');
+            if($('html').hasClass('no-slide-pagination'))
+                $('body').css('overflow-y', 'auto');
         }
         else{
             $('body').css('overflow-y', 'hidden');
