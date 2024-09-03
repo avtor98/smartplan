@@ -1,81 +1,54 @@
-export function Common($) {
+const $body = document.querySelector('body');
+const btn_mobile_menu = document.getElementById("burger_button");
+const header = document.querySelector('.header');
+const toggle_menu = document.getElementById('toggle_menu');
 
-    
-    //Кнопка-бургер (меню)
-    $('#burger_button').click(function(){
-        //$(this).toggleClass('open_mobile_menu');
+//Кнопка-бургер (меню)
+btn_mobile_menu.onclick = function(){    
+    if (header.classList.contains('--open_mobile_menu')){
 
+        if (toggle_menu.classList.contains('--open_ex'))
+            toggle_menu.classList.remove('--open_ex');
 
-        if($('.header').hasClass('--open_mobile_menu'))
-        {
-            if($('#toggle_menu').hasClass('--open_ex'))
-            {
-                $('#toggle_menu').removeClass('--open_ex');
-            }
+        if(document.documentElement.classList.contains('no-slide-pagination'))
+            $body.style['overflow-y'] = 'auto';
+    }
+    else
+        $body.style['overflow-y'] = 'hidden';
 
-            if($('html').hasClass('no-slide-pagination'))
-                $('body').css('overflow-y', 'auto');
-        }
-        else{
-            $('body').css('overflow-y', 'hidden');
-        }
+    header.classList.toggle("--open_mobile_menu");
+}
 
-        $('.header').toggleClass('--open_mobile_menu');
-        //$('body').toggleClass('overflow');
-    });
+//Пункт решения в мобильном меню
+toggle_menu.onclick = function(){    
+    toggle_menu.classList.toggle("--open_ex");
+}
 
-    //Пункт решения в мобильном меню
-    $('#toggle_menu').click(function(){
-        $(this).toggleClass('--open_ex');
-    });
+//Открытие модальных окон
+var footer_modal = document.querySelectorAll('.footer-links__link');
+var footer_modal_close = document.querySelectorAll('.modal_full-wrapper-btn_close');
 
-    //Открытие формы демоверсии
-    $('#btn_open_form').click(function(){
-        $('#phone-form').toggleClass('--open_form');
+footer_modal.forEach((item) => {
+    item.onclick = function(){
+        OpenModalForm(item.dataset.modal);
+    } 
+});
 
-        setTimeout(function(){
+footer_modal_close.forEach((item, index) => {
+    item.onclick = function(){      
+        CloseModalForm(item.parentNode.parentNode);
+    } 
+});
 
-            $('.first_block').removeClass('--overflow');
-        
-        }, 1500);
-    });
+function OpenModalForm(type){
+    var click_modal = document.querySelector(".modal_full[data-modal=" + type + "");
+    click_modal.classList.remove('--fade');
+    $body.style['overflow-y'] = 'hidden';
+}
 
-    // Маска телефона
-    /*
-    $('#phone-input-mobile').mask('+7 (000) 000 00-00', {
-        clearIfNotMatch: false,
-        onKeyPress: function(cep, event, currentField, options) {
-            if (cep.length === 5) {
-                let lastChar = Number(cep[cep.length - 1]);
-                if (lastChar === 7 || lastChar === 8) {
-                    $(currentField).val('+7 (');
-                }
-            }
-        }
-    }).on('focus', function(){
-        $(this).val('+7 (');
-
-        var self = this;
-
-        setTimeout(() => {
-            self.setSelectionRange(4, 4);
-        }, 100);
-    });
-    */
-
-    //Открытие модальных окон
-    $('.footer-links__link').click(function(){
-        $('.modal_full[data-modal=' + $(this).data("modal") + ']').removeClass('--fade');
-        //$('body').toggleClass('overflow');
-        $('body').css('overflow-y', 'hidden');
-    });
-
-    //Закрытие модальных окон
-    $('.modal_full-wrapper-btn_close').click(function(){
-        var modal_type = $(this).closest('.modal_full').data("modal");
-        $('.modal_full[data-modal=' + modal_type + ']').addClass('--fade');
-        $('.modal_full[data-modal=' + modal_type + ']').animate({scrollTop: 0}, 400);
-        //$('body').toggleClass('overflow');
-        $('body').css('overflow-y', 'auto');
-    });
+//Закрытие модальных окон
+function CloseModalForm(modal_close){  
+    modal_close.classList.add('--fade');
+    modal_close.animate({scrollTop: 0}, 400);
+    $body.style['overflow-y'] = 'auto';
 }
