@@ -14,8 +14,8 @@
                 </div>
                 <div class="footer-block">
                     <p class="footer-block-title">Для звонков из РФ</p>
-                    <a href="tel:+78009999999">
-                        <span>+7 (800) 999 99-99</span>
+                    <a href="tel:88007770094">
+                        <span>8 (800) 777-00-94</span>
                     </a>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="footer-block">
                 <p class="footer-block-title">Новости</p>
-                <a href="/">Блог smart plan</a>
+                <!-- <a href="/">Блог smart plan</a> -->
                 <a href="/">Мы в Telegram</a>
                 <a href="/">Мы в Дзен</a>
                 <a href="/">Кейсы</a>

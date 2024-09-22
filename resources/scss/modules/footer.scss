@@ -257,7 +257,7 @@
             //opacity: 0.3;
 
             @include mq('xxxl') {
-                font-size: 20px;
+                font-size: 16px;
             }
 
             @include mq('xxl') {
@@ -348,7 +348,7 @@
                 transition: .2s ease-in-out;
 
                 @include mq('xxxl') {
-                    font-size: 16px;
+                    font-size: 14px;
                 }
 
                 @include mq('xxl') {
@@ -436,6 +436,7 @@
 
     &-copirite{
         grid-column: 1/3;
+        align-self: flex-end;
 
         @include mq('xl') {
             grid-column: 1/-1;
@@ -503,10 +504,6 @@
                 color: #1D2848;
 
                 @include mq('xxxl') {
-                    font-size: 20px;
-                }
-
-                @include mq('xxl') {
                     font-size: 14px;
                 }
 
@@ -530,10 +527,6 @@
 
             @include mq('xxxl') {
                 margin-top: 26px;
-                font-size: 20px;
-            }
-
-            @include mq('xxl') {
                 font-size: 14px;
             }
 
@@ -610,7 +603,7 @@
             cursor: pointer;
 
             @include mq('xxxl') {
-                font-size: 20px;
+                font-size: 16px;
             }
 
             @include mq('xxl') {

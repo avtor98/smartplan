@@ -12,8 +12,8 @@
 
             </div>
             <div class="header-right">
-                <a href="tel:+78009999999" class="header-right-phone">
-                    <span>+7 (800) 999 99-99</span>
+                <a href="tel:88007770094" class="header-right-phone">
+                    <span>8 (800) 777-00-949</span>
                 </a>
                 <a href="/login" class="header-right-btn">
                     <span>Войти</span>
@@ -84,8 +84,8 @@
             <div class = "header-mobile-menu-link">
                 <div class = "header-mobile-menu-link-item">
                     <p>Для звонков из РФ</p>
-                    <a href="tel:+78009999999" class="header-mobile-menu-link-item">
-                        <span>+7 (800) 999 99-99</span>
+                    <a href="tel:88007770094" class="header-mobile-menu-link-item">
+                        <span>8 (800) 777-00-94</span>
                     </a>
                 </div>
                 <div class = "header-mobile-menu-link-item">

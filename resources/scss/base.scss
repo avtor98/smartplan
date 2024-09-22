@@ -1,6 +1,14 @@
-body{
+html, body{
     background-color: #EFF0F0;
     overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    //height: 100vh;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
 
     a{
         text-decoration: none;

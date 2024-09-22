@@ -3,18 +3,20 @@ import { Pagination, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/mousewheel';
 
-const $body = document.querySelector('body');
+const $body = document.querySelector('html');
 $body.style['overflow-y'] = 'hidden';
 
 window.onbeforeunload = function() { window.scrollTo(0, 0); };
 
-const swiperContainer = document.querySelector('#page__wrapper > .main_page__content');
+const swiperContainer = document.querySelector('#page__wrapper > .main_page-slider');
 const swiperItems = swiperContainer.querySelectorAll('.visibility-actions');
 let swiperWrap, swiperSlides, swiperTicker, direction;
 
 setWrapHeight();
 createPagination(swiperContainer);
-swiperInit();
+
+if(window.innerWidth > 650)
+    swiperInit();
 
 document.documentElement.classList.add('--no-slide');
 document.documentElement.classList.add('first-slide-active');
@@ -22,7 +24,7 @@ document.documentElement.classList.add('first-slide-active');
 
 window.addEventListener( 'resize', setWrapHeight );
 
-function swiperInit() {
+function swiperInit() {    
     swiperContainer.classList.add('swiper', 'swiperVertical');
     direction = 0
 
@@ -35,6 +37,7 @@ function swiperInit() {
         loop: false,
         createElements: true,
         direction: 'vertical',
+        allowTouchMove: true,
         slidesPerView: 1,
         SpaceBetween: 0,
 
@@ -66,7 +69,7 @@ function swiperInit() {
     swiperTicker.on('slideChangeTransitionStart', setActiveScreen);
 
     document.querySelector('.main-block-content-menu').style.removeProperty('opacity');
-    document.querySelector('.main_page__content-btn').style.removeProperty('opacity');
+    document.querySelector('.main_page-slider-btn').style.removeProperty('opacity');
 };
 
 //Создание пагинации
@@ -128,16 +131,47 @@ function setWrapHeight() {
     margin -= document.querySelector('.main-block-content-menu').scrollHeight;
     margin -= document.querySelector('.main-block-title').scrollHeight;
 
-    if(window.innerWidth < 1850)
-        margin -= (30 + 40 + 60);
+    $body.style['height'] = window.innerHeight + "px";
+
+    if(window.innerWidth < 960){
+        $body.style['overflow-y'] = 'auto';
+    }
     else if(window.innerWidth < 1200)
         margin -= (30 + 30 + 50);
-    else if(window.innerWidth < 960)
-        margin -= (20 + 30 + 50);
+    else if(window.innerWidth < 1850)
+        margin -= (30 + 40 + 60);
     else
         margin -= (40 + 58 + 80);
 
     margin /= 2; 
         
     document.documentElement.style.setProperty('--margin-title', margin + 'px');
+
+
+    /*
+    if(window.innerWidth > 650)
+        swiperInit();
+    else
+        if(swiperTicker != undefined){
+            console.log("Слайдер есть");
+            swiperTicker.destroy(true, true);
+            
+        }
+        else
+            console.log("Слайдера нет");
+
+    console.log(swiperTicker);
+    */
+
 }
+
+//Фикс прокрутки вверх после слайдера
+window.addEventListener('scroll', function(){
+    if(swiperTicker.activeIndex == swiperSlides.length - 1){
+        swiperTicker.enabled = false;
+
+        if(window.scrollY == 0){
+            swiperTicker.enabled = true;
+        }
+    }
+});

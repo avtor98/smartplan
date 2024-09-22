@@ -1,4 +1,4 @@
-const $body = document.querySelector('body');
+const $body = document.querySelector('html');
 const btn_mobile_menu = document.getElementById("burger_button");
 const header = document.querySelector('.header');
 const toggle_menu = document.getElementById('toggle_menu');
@@ -10,11 +10,10 @@ btn_mobile_menu.onclick = function(){
         if (toggle_menu.classList.contains('--open_ex'))
             toggle_menu.classList.remove('--open_ex');
 
-        if(document.documentElement.classList.contains('no-slide-pagination'))
-            $body.style['overflow-y'] = 'auto';
+        $body.style['overflow'] = 'auto';
     }
     else
-        $body.style['overflow-y'] = 'hidden';
+        $body.style['overflow'] = 'hidden';
 
     header.classList.toggle("--open_mobile_menu");
 }
@@ -43,12 +42,12 @@ footer_modal_close.forEach((item, index) => {
 function OpenModalForm(type){
     var click_modal = document.querySelector(".modal_full[data-modal=" + type + "");
     click_modal.classList.remove('--fade');
-    $body.style['overflow-y'] = 'hidden';
+    $body.style['overflow'] = 'hidden';
 }
 
 //Закрытие модальных окон
 function CloseModalForm(modal_close){  
     modal_close.classList.add('--fade');
     modal_close.animate({scrollTop: 0}, 400);
-    $body.style['overflow-y'] = 'auto';
+    $body.style['overflow'] = 'auto';
 }
