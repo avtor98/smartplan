@@ -1377,6 +1377,237 @@
 
         }
     }
+
+    //Стили элемента с горизонтальным скроллом
+    &-horizontal{
+        position: relative;
+        height: 100vh;
+
+        &-wrap{
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+
+            &.--fixed{
+                position: fixed;
+            }
+        }
+
+        &-title{
+            font-family: 'Montserrat-Bold';
+            font-size: 62px;
+            font-weight: 600;
+            line-height: 1.2em;
+            letter-spacing: -0.04em;
+            text-align: center;
+
+            span{
+                color: #1E69FE;
+            }
+
+        }
+
+        &-block{
+            margin-top: 100px;
+            padding-left: 100px;
+            width: 100%;
+            height: fit-content;
+
+            overflow: hidden;
+
+            &-wrapper{
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                width: fit-content;
+                height: 100%;
+
+                &::before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 40px;
+                    right: 0;
+                    transform: translateY(-50%);
+
+                    height: 16px;
+
+                    background-color: #1E69FE;
+                    opacity: .4;
+
+                    z-index: 1;
+                }
+
+                *{
+                    box-sizing: border-box;
+                    z-index: 2;
+                }
+
+                &-first{
+                    width: calc(100vw - 100px - 41px);
+
+                    display: inline-flex;
+                    align-items: center;
+                }
+
+                &-second{
+                    display: inline-flex;
+                    align-items: center;
+                    width: max-content;
+
+                    .main_page-horizontal-block-wrapper-content{
+                        margin-right: 0;
+                        grid-template-columns: auto auto;
+
+                        &-item{
+                            &-text{
+                                white-space: pre-line;
+                            }
+                        }
+                    }
+                }
+
+                &-num{
+                    width: 82px;
+                    height: 82px;
+                    margin-right: 10px;
+
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    border-radius: 50%;
+                    background-color: #fff;
+
+                    font-family: 'Montserrat-Bold';
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 1.3em;
+                    letter-spacing: -0.04em;
+
+                    color: #1E69FE;
+                }
+
+                &-item{
+                    height: 78px;
+                    width: fit-content;
+                    padding: 0 50px;
+
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    font-family: 'Montserrat-Bold';
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 1.3em;
+                    letter-spacing: -0.04em;
+                    color: #1E69FE;
+
+                    white-space: nowrap;
+
+                    background-color: #fff;
+                    border-radius: 39px;
+                    
+                    &.--blue{
+                        background-color: #1E69FE;
+                        color: #fff;
+                    }
+                }
+
+                &-content{
+                    height: fit-content;
+                    padding: 50px 0;
+                    margin: 0 40px;
+
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    align-items: center;
+
+                    background-color: #fff;
+                    border-radius: 30px;
+
+                    &-item{
+                        padding: 0 50px;
+                        border-right: 1px solid rgba($color: #1D2848, $alpha: 0.2);
+                    
+                        text-align: center;
+
+                        &:last-child{
+                            border: none;
+                        }
+
+                        &-title{
+
+                            font-family: 'Montserrat-Bold';
+                            font-size: 26px;
+                            font-weight: 600;
+                            line-height: 1.3em;
+                            letter-spacing: -0.04em;
+                            color: #1E69FE;
+                        }
+
+                        &-text{
+                            padding-top: 26px;
+
+                            font-family: 'Montserrat';
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 1.3em;
+                            letter-spacing: -0.04em;
+                            color: #1D2848;
+                            opacity: 0.4;
+                        }
+
+                        &-team{
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 26px;
+
+                            padding-top: 26px;
+
+                            &-person{
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                background-size: 100% 100%;
+
+                                &:nth-child(1){
+                                    background-image: url("/public/images/pages/person_1.png");
+                                }
+
+                                &:nth-child(2){
+                                    background-image: url("/public/images/pages/person_2.png");
+                                }
+
+                                &:nth-child(3){
+                                    background-image: url("/public/images/pages/person_3.png");
+                                }
+
+                            }
+
+                            &-num{
+                                font-family: 'Montserrat-Bold';
+                                font-size: 20px;
+                                font-weight: 600;
+                                line-height: 1.3em;
+                                letter-spacing: -0.04em;
+                                
+                                color: rgba($color: #1D2848, $alpha: 0.4);
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 html

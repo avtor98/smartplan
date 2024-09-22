@@ -388,7 +388,7 @@
                     </div>
                 </div>
 
-                <div class="main_page-card --fourth">
+                <div class="main_page-card">
                     <div class="main_page-card-wrapper">
                         <div class="main_page-card-content">
                             <p class="main_page-card-content-text">
@@ -429,7 +429,7 @@
                     </div>
                 </div>
 
-                <div class="main_page-card --fifth">
+                <div class="main_page-card">
                     <div class="main_page-card-wrapper">
                         <div class="main_page-card-content">
                             <p class="main_page-card-content-text">
@@ -479,6 +479,95 @@
                 </div>
 
                 <div class="main_page-cards-bg"></div>
+            </div>
+
+            <div class="main_page-horizontal">
+                <div class="main_page-horizontal-wrap">
+                    <h1 class="main_page-horizontal-title">
+                        Бережем ваше<br>
+                        время&nbsp;&mdash; <span>настроим<br>
+                        все за&nbsp;вас</span>
+                    </h1>
+                    <div class="main_page-horizontal-block">
+                        <div class="main_page-horizontal-block-wrapper">
+                            <div class="main_page-horizontal-block-wrapper-first">
+                                <div class="main_page-horizontal-block-wrapper-num">
+                                    <span>01</span>
+                                </div>
+                                <div class="main_page-horizontal-block-wrapper-item --blue">
+                                    <span>Внедрение</span>
+                                </div>
+                                <div class="main_page-horizontal-block-wrapper-content">
+                                    <div class="main_page-horizontal-block-wrapper-content-item">
+                                        <h1 class="main_page-horizontal-block-wrapper-content-item-title">
+                                            Аудит
+                                        </h1>
+                                        <p class="main_page-horizontal-block-wrapper-content-item-text">
+                                            Проблема с&nbsp;контролем<br>
+                                            статусов имеющихся<br>
+                                            в&nbsp;продаже лотов
+                                        </p>
+                                    </div>
+                                    <div class="main_page-horizontal-block-wrapper-content-item">
+                                        <h1 class="main_page-horizontal-block-wrapper-content-item-title">
+                                            Настройка
+                                        </h1>
+                                        <p class="main_page-horizontal-block-wrapper-content-item-text">
+                                            Проблема с&nbsp;контролем<br>
+                                            статусов имеющихся<br>
+                                            в&nbsp;продаже лотов
+                                        </p>
+                                    </div>
+                                    <div class="main_page-horizontal-block-wrapper-content-item">
+                                        <h1 class="main_page-horizontal-block-wrapper-content-item-title">
+                                            Обучение
+                                        </h1>
+                                        <p class="main_page-horizontal-block-wrapper-content-item-text">
+                                            Проблема с&nbsp;контролем<br>
+                                            статусов имеющихся<br>
+                                            в&nbsp;продаже лотов
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="main_page-horizontal-block-wrapper-item">
+                                    <span>~ 5 дней</span>
+                                </div>
+                            </div>
+                            <div class="main_page-horizontal-block-wrapper-second">
+                                <div class="main_page-horizontal-block-wrapper-num">
+                                    <span>02</span>
+                                </div>
+                                <div class="main_page-horizontal-block-wrapper-item --blue">
+                                    <span>Бесплатная поддержка</span>
+                                </div>
+                                <div class="main_page-horizontal-block-wrapper-content">
+                                    <div class="main_page-horizontal-block-wrapper-content-item">
+                                        <h1 class="main_page-horizontal-block-wrapper-content-item-title">
+                                            Помощь
+                                        </h1>
+                                        <p class="main_page-horizontal-block-wrapper-content-item-text">Не&nbsp;будем мучать вас ботами 
+                                            с&nbsp;типовыми ответами. На&nbsp;ваши вопросы 
+                                            ответит человек и&nbsp;поможет разобраться. 
+                                            Если будет не&nbsp;понятно, сделаем за&nbsp;вас!</p>
+                                    </div>
+                                    <div class="main_page-horizontal-block-wrapper-content-item">
+                                        <h1 class="main_page-horizontal-block-wrapper-content-item-title">
+                                            Команда
+                                        </h1>
+                                        <div class="main_page-horizontal-block-wrapper-content-item-team">
+                                            <div class="main_page-horizontal-block-wrapper-content-item-team-person"></div>
+                                            <div class="main_page-horizontal-block-wrapper-content-item-team-person"></div>
+                                            <div class="main_page-horizontal-block-wrapper-content-item-team-person"></div>
+                                            <p class="main_page-horizontal-block-wrapper-content-item-team-num">+6</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     
