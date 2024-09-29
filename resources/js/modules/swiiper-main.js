@@ -1,7 +1,13 @@
 import Swiper from 'swiper';
-import { Pagination, Mousewheel } from 'swiper/modules';
+import { Pagination, Mousewheel, Navigation} from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/bundle';
 import 'swiper/css/mousewheel';
+
+import Glide from '@glidejs/glide';
+
+//import Swiper from "cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js";
+
 
 const $body = document.querySelector('html');
 $body.style['overflow-y'] = 'hidden';
@@ -10,7 +16,7 @@ window.onbeforeunload = function() { window.scrollTo(0, 0); };
 
 const swiperContainer = document.querySelector('#page__wrapper > .main_page-slider');
 const swiperItems = swiperContainer.querySelectorAll('.visibility-actions');
-let swiperWrap, swiperSlides, swiperTicker, direction;
+let swiperTicker, direction, index_slide;
 
 setWrapHeight();
 createPagination(swiperContainer);
@@ -63,13 +69,54 @@ function swiperInit() {
         preventInteractionOnTransition: true
     });
 
-    swiperWrap = document.querySelector('.swiper-wrapper');
-    swiperSlides = document.querySelectorAll('.swiper-slide');
-
     swiperTicker.on('slideChangeTransitionStart', setActiveScreen);
 
     document.querySelector('.main-block-content-menu').style.removeProperty('opacity');
     document.querySelector('.main_page-slider-btn').style.removeProperty('opacity');
+
+    //Слайдер карточек
+    const swiperSlider = new Swiper('#main-slider', {
+        modules: [Navigation],
+        spaceBetween: 0,
+        centeredSlides: true,
+        allowTouchMove: false, 
+        loop: true,
+        preventInteractionOnTransition: true,
+
+        navigation: {
+            nextEl: '.main_slider-control.--next',
+            prevEl: '.main_slider-control.--prev',
+        },
+    });
+    index_slide = 0;
+
+    //Слайдер карточек thumbs
+    const SliderThumbs = new Glide('#thumbs-slider',{
+        type: 'carousel',
+        perView: 6,
+        focusAt: 'center',
+    });
+    SliderThumbs.mount();
+
+    //Переключение слайдера карточек thumbs
+    swiperSlider.on('realIndexChange', function () {        
+        if (swiperSlider.realIndex == swiperSlider.slides.length - 1 && index_slide == 0)
+            SliderThumbs.go('<');
+        else if (swiperSlider.realIndex == 0 && index_slide == swiperSlider.slides.length - 1)
+            SliderThumbs.go('>');
+        else
+            SliderThumbs.go('=' + swiperSlider.realIndex);
+
+        index_slide = swiperSlider.realIndex;
+    });
+
+    swiperSlider.on('slideNextTransitionEnd', function () {        
+        SliderThumbs.go('=' + swiperSlider.realIndex);
+        index_slide = swiperSlider.realIndex;
+    });
+
+    
+
 };
 
 //Создание пагинации
@@ -81,21 +128,20 @@ function createPagination($sliderWrap, paginationClass = "main-swiper-pagination
 
 //Добавление класса активного слайда к HTML
 function setActiveScreen() {
-    swiperSlides[0].classList.contains('swiper-slide-active') ? document.documentElement.classList.add('first-slide-active') : document.documentElement.classList.remove('first-slide-active');
-    swiperSlides[1].classList.contains('swiper-slide-active') ? document.documentElement.classList.contains('--no-slide') ? document.documentElement.classList.replace('--no-slide', 'second-slide-active') : document.documentElement.classList.add('second-slide-active') : document.documentElement.classList.remove('second-slide-active');
+    swiperItems[0].classList.contains('swiper-slide-active') ? document.documentElement.classList.add('first-slide-active') : document.documentElement.classList.remove('first-slide-active');
+    swiperItems[1].classList.contains('swiper-slide-active') ? document.documentElement.classList.contains('--no-slide') ? document.documentElement.classList.replace('--no-slide', 'second-slide-active') : document.documentElement.classList.add('second-slide-active') : document.documentElement.classList.remove('second-slide-active');
     
     //swiperSlides[5].classList.contains('swiper-slide-active') ? document.documentElement.classList.add('no-slide-pagination') : document.documentElement.classList.remove('no-slide-pagination');
     //swiperSlides[3].classList.contains('swiper-slide-active') ? document.documentElement.classList.add('fourth-slide-active') : document.documentElement.classList.remove('fourth-slide-active');
     //swiperSlides[4].classList.contains('swiper-slide-active') ? document.documentElement.classList.add('fifth-slide-active') : document.documentElement.classList.remove('fifth-slide-active');
-    swiperSlides[swiperSlides.length - 1].classList.contains('swiper-slide-active') ? document.documentElement.classList.add('last-slide-active') : document.documentElement.classList.remove('last-slide-active');        
-
+    swiperItems[swiperItems.length - 1].classList.contains('swiper-slide-active') ? document.documentElement.classList.add('last-slide-active') : document.documentElement.classList.remove('last-slide-active');
 
     if (swiperTicker.activeIndex == 1){
         if(swiperTicker.realIndex - direction > 0)
-            swiperSlides[1].querySelector('p').style.transitionDelay = '2.5s';
+            swiperItems[1].querySelector('p').style.transitionDelay = '2.5s';
     }
     else{
-        swiperSlides[1].querySelector('p').style.removeProperty('transition-delay');
+        swiperItems[1].querySelector('p').style.removeProperty('transition-delay');
     }
 
     direction = swiperTicker.realIndex;
@@ -107,7 +153,7 @@ function setActiveScreen() {
         document.documentElement.classList.remove('no-slide-pagination');
     }
 
-    if(swiperTicker.activeIndex == swiperSlides.length - 1)
+    if(swiperTicker.activeIndex == swiperItems.length - 1)
     {
         $body.style['overflow-y'] = 'auto';
     }
@@ -167,7 +213,7 @@ function setWrapHeight() {
 
 //Фикс прокрутки вверх после слайдера
 window.addEventListener('scroll', function(){
-    if(swiperTicker.activeIndex == swiperSlides.length - 1){
+    if(swiperTicker.activeIndex == swiperItems.length - 1){
         swiperTicker.enabled = false;
 
         if(window.scrollY == 0){

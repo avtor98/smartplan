@@ -568,7 +568,365 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="main_page-btn --finally">
+                    <span>Рассказать о своей боли</span>
+                </div>
             </div>
+
+
+            <div class="main_slider">
+                <div class="main_slider-control --prev">
+                        <svg width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.97532" width="1.37931" height="26.1726" transform="matrix(-0.707107 0.707107 0.707107 0.707107 1.4207 18.2407)" fill="#1E69FE" stroke="#1E69FE" stroke-width="1.37931"/>
+                            <rect x="20.0635" y="0.97532" width="1.37931" height="26.2069" transform="rotate(45 20.0635 0.97532)" fill="#1E69FE" stroke="#1E69FE" stroke-width="1.37931"/>
+                        </svg>
+                </div>
+
+                <div id="main-slider" class="main_slider-wrapper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/leader_logo.svg') }}" />
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/aeron_logo.svg') }}" />
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/botanica_logo.svg') }}" />
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/blizkii_logo.svg') }}" />
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/kortros_logo.svg') }}" />
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/mechta_logo.svg') }}" />
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/etagi_logo.svg') }}" />                                    
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main_slider-item swiper-slide">
+                            <div class="main_slider-item-title">
+                                <div class="main_slider-item-title-logo">
+                                    <img src="{{ asset('/images/pages/main_page_slider/goodzem_logo.svg') }}" />
+                                </div>
+                                <div class="main_slider-item-title-bundle"></div>
+                                <div class="main_slider-item-title-logo-sm"></div>
+                            </div>
+                            <p class="main_slider-item-text">
+                                Внедрили за&nbsp;1&nbsp;месяц визуальные выборщики
+                                для 10&nbsp;жилых комплексов (&gt;10&nbsp;000&nbsp;объектов)
+                            </p>
+                            <div class="main_slider-item-img">
+                                <img src="{{ asset('/images/pages/main_page_slider/slider_photo.png') }}" alt="Кортрос заставка">
+                            </div>
+                            <div class="main_slider-item-comment">
+                                <div class="main_slider-item-comment-icon">
+                                    <div class="main_slider-item-comment-icon-circle">
+                                        <div class="main_slider-item-comment-icon-circle --second">
+                                            <div class="main_slider-item-comment-icon-image">
+                                                <img src="{{ asset('/images/pages/main_page_slider/slider_comment_logo.svg') }}" alt="Кортрос коментарий">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main_slider-item-comment-item-pre"></div>
+                                <div class="main_slider-item-comment-item">
+                                    <p class="main_slider-item-comment-text">
+                                        &laquo;Свой визульный выборщик нам сделать и&nbsp;наполнить вышло&nbsp;бы 10-15&nbsp;млн, то&nbsp;есть мы&nbsp;бы окупали его лет 20. А&nbsp;ваш нам окупится за&nbsp;одно хмурое утро :-)&raquo;
+                                    </p>
+                                    <p class="main_slider-item-comment-time">
+                                        19:10
+                                    </d>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main_slider-control --next">
+                        <svg width="23" height="40" viewBox="0 0 23 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.97532" width="1.37931" height="26.1726" transform="matrix(-0.707107 0.707107 0.707107 0.707107 1.4207 18.2407)" fill="#1E69FE" stroke="#1E69FE" stroke-width="1.37931"/>
+                            <rect x="20.0635" y="0.97532" width="1.37931" height="26.2069" transform="rotate(45 20.0635 0.97532)" fill="#1E69FE" stroke="#1E69FE" stroke-width="1.37931"/>
+                        </svg>
+                </div>
+
+                <div id="thumbs-slider"  class="main_slider-thumbs glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <div class="glide__slides">
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/leader_logo.svg') }}" />
+                            </div>
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/aeron_logo.svg') }}" />
+                            </div>
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/botanica_logo.svg') }}" />
+                            </div>
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/blizkii_logo.svg') }}" />
+                            </div>
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/kortros_logo.svg') }}" />
+                            </div>
+
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/mechta_logo.svg') }}" />
+                            </div>
+
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/etagi_logo.svg') }}" />
+                            </div>
+
+                            <div class="main_slider-thumbs-item glide__slide">
+                                <img src="{{ asset('/images/pages/main_page_slider/goodzem_logo.svg') }}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
         </section>
     
     </section>
@@ -577,3 +935,4 @@
 
 
 @endsection
+

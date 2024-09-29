@@ -61,7 +61,7 @@ window.addEventListener('scroll', function(){
             document.querySelector('.main_page-cards .main_page-cards-bg').style.position = 'fixed';
             document.querySelector('.main_page-cards .main_page-cards-bg').style.opacity = '1';
 
-            //Шлавная кнопка
+            //Главная кнопка
             document.querySelector('.main_page-btn').classList.add('--show');        
 
             if(scrollTop < containerHeight + margin_card)
@@ -108,8 +108,9 @@ window.addEventListener('scroll', function(){
             document.querySelector('.main_page-btn').classList.remove('--show');
         }
 
-        if (scrollTop > margin_card){
+        if (scrollTop > margin_card && scrollTop < scroll_to_horizontal + scroll_horiz){
             document.querySelector('.main_page-btn').classList.add('--show');
+            document.querySelector('.main_page-btn.--finally').classList.remove('--show');    
         }
 
         //Блок с горизонтальным скроллом
@@ -122,15 +123,22 @@ window.addEventListener('scroll', function(){
             
             if(scrollTop <= scroll_to_horizontal + scroll_horiz){
                 horizontal.style.transform = `translateX(-${scrollTop - scroll_to_horizontal}px)`;
+            
+                document.querySelector('.main_page-btn:not(.--finally)').style.display = '';    
+                document.querySelector('.main_page-btn.--finally').style.display = ''; 
             }
             else{
                 horizontal.style.transform = `translateX(-${scroll_horiz}px)`;
             
                 //После окончания горизонтального скролла
-                if(scrollTop <= scroll_to_horizontal + scroll_horiz + containerHeight)
+                if(scrollTop <= scroll_to_horizontal + scroll_horiz + containerHeight){
                     document.querySelector('.main_page-horizontal-wrap').style.transform = `translateY(-${scrollTop - scroll_to_horizontal - scroll_horiz}px)`;
-                else
+                    document.querySelector('.main_page-btn:not(.--finally)').style.display = 'none';    
+                    document.querySelector('.main_page-btn.--finally').style.display = 'inline-flex';   
+                }
+                else{
                     document.querySelector('.main_page-horizontal-wrap').style.transform = `translateY(-${scroll_horiz}px)`;
+                }
 
             }
         }
