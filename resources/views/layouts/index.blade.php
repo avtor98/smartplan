@@ -178,76 +178,85 @@
                 <div class="main-block-background"></div>
 
                 <div class="video-block">
-                    <div class="video-block-item">
-                        <h1 class="video-block-item-title">
-                            Создайте и наполните свой объект недвижимости 
-                            <br><span>в одно касание</span>
-                        </h1>
-                        <div class="video-block-item-btn">
-                            <span>Попробовать бесплатно</span>
+                    <h1 class="video-block-title">
+                        <span>Посмотрите</span><br>
+                        видеодемонстрацию<br>
+                        системы
+                    </h1>
+                    <div class="video-block-wrapper">
+                        <div class="video-block-wrapper-video">
+                            <video loop muted poster="{{ asset('images/pages/video_preloader.jpg') }}">
+                                <source src="{{ asset('video/main_video.mp4') }}" type="video/mp4">
+                                Видео не поддерживается вашим браузером.
+                            </video>
                         </div>
-                        <div class="video-block-item-wrapper">
-                            <div class="video-block-item-wrapper-video">
-                                <video loop muted poster="{{ asset('images/pages/video_preloader.jpg') }}">
-                                    <source src="{{ asset('video/main_video.mp4') }}" type="video/mp4">
-                                    Видео не поддерживается вашим браузером.
-                                </video>
-                            </div>
+
+                        <div class="video-block-btn">
+                            <svg width="27" height="31" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5482 11.3962L6.86052 0.629684C3.89926 -1.17173 0.214287 1.10738 0.214287 4.7339V26.2659C0.214287 29.8971 3.89926 32.1715 6.86052 30.3701L24.5482 19.609C27.5316 17.7934 27.5316 13.2118 24.5482 11.3962Z" fill="#1E69FE"/>
+                            </svg>
                         </div>
                     </div>
 
                     <div class="video-block-item">
-                        <h1 class="video-block-item-title">
-                            Интерактивный генплан и каталог для сайта <span>за 15 минут</span><br>без кода и сложных инструкций
-                        </h1>
-                        <div class="video-block-item-btn">
-                            <span>Попробовать бесплатно</span>
-                        </div>
-                        <div class="video-block-item-wrapper">
-                            <div class="video-block-item-wrapper-video">
-                                <video loop muted poster="{{ asset('images/pages/video_preloader.jpg') }}">
-                                    <source src="{{ asset('video/main_video.mp4') }}" type="video/mp4">
-                                    Видео не поддерживается вашим браузером.
-                                </video>
-                            </div>
-                        </div>
+                        <p>
+                            Создавайте и <span>управляйте<br>
+                            своим объектом</span> недвижимости<br>
+                            <span>в одно касание</span>
+                        </p>
                     </div>
-
                     <div class="video-block-item">
-                        <h1 class="video-block-item-title">
-                            Настройте фиды во все агрегаторы<br><span>в одно касание</span>
-                        </h1>
-                        <div class="video-block-item-btn">
-                            <span>Попробовать бесплатно</span>
-                        </div>
-                        <div class="video-block-item-wrapper">
-                            <div class="video-block-item-wrapper-video">
-                                <video loop muted poster="{{ asset('images/pages/video_preloader.jpg') }}">
-                                    <source src="{{ asset('video/main_video.mp4') }}" type="video/mp4">
-                                    Видео не поддерживается вашим браузером.
-                                </video>
-                            </div>
-                        </div>
+                        <p>
+                            <span>Интерактивный генплан<br>
+                            и каталог</span> для сайта <span>за 15 минут</span><br>
+                            без кода и сложных инструкций
+                        </p>
                     </div>
-
                     <div class="video-block-item">
-                        <h1 class="video-block-item-title">
-                            <span>Меняйте цены хоть каждую <br class="--br-mobile">минуту</span>&nbsp;&mdash; они изменятся везде: <br class="--br-no-mobile">на&nbsp;сайте, в&nbsp;прайсах, в&nbsp;фидах
+                        <p>
+                            Настройте<br>
+                            <span>автоматический экспорт</span><br>
+                            во все агрегаторы
+                        </p>
+                    </div>
+                    <div class="video-block-item">
+                        <p>
+                            <span>Меняйте цены хоть каждую минуту</span><br>
+                            – они изменятся везде:<br>
+                            на сайте, в прайсах, в фидах
+                        </p>
+                    </div>                    
+                </div>
+
+                <div class="visibility-actions --center-block --mobile">
+                    <div class="visibility-actions-content">
+                        <h1 class="visibility-actions-content-title">
+                            <span>Smart plan</span> превращает<br>
+                            боли в <span>решения</span> 
                         </h1>
-                        <div class="video-block-item-btn">
-                            <span>Попробовать бесплатно</span>
-                        </div>
-                        <div class="video-block-item-wrapper">
-                            <div class="video-block-item-wrapper-video">
-                                <video loop muted poster="{{ asset('images/pages/video_preloader.jpg') }}">
-                                    <source src="{{ asset('video/main_video.mp4') }}" type="video/mp4">
-                                    Видео не поддерживается вашим браузером.
-                                </video>
+                        <div class="--pain-container">
+                            <div class="--pain-container-btn">
+                                <div class="--pain-container-btn-main">
+                                    <span>Боль</span>
+                                </div>
+                                <div class="--pain-container-btn-scroll">
+                                    <span>Боль</span>
+                                </div>
+                            </div>
+                            <div class="--pain-container-swipe">
+                                <div class="--pain-container-swipe-toggle"></div>
+                            </div>
+                            <div class="--pain-container-btn">
+                                <div class="--pain-container-btn-main">
+                                    <span>Решение</span>
+                                </div>
+                                <div class="--pain-container-btn-scroll">
+                                    <span>Решение</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="main_page-btn">
@@ -550,17 +559,6 @@
                                             ответит человек и&nbsp;поможет разобраться. 
                                             Если будет не&nbsp;понятно, сделаем за&nbsp;вас!</p>
                                     </div>
-                                    <div class="main_page-horizontal-block-wrapper-content-item">
-                                        <h1 class="main_page-horizontal-block-wrapper-content-item-title">
-                                            Команда
-                                        </h1>
-                                        <div class="main_page-horizontal-block-wrapper-content-item-team">
-                                            <div class="main_page-horizontal-block-wrapper-content-item-team-person"></div>
-                                            <div class="main_page-horizontal-block-wrapper-content-item-team-person"></div>
-                                            <div class="main_page-horizontal-block-wrapper-content-item-team-person"></div>
-                                            <p class="main_page-horizontal-block-wrapper-content-item-team-num">+6</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
@@ -573,7 +571,6 @@
                     <span>Рассказать о своей боли</span>
                 </div>
             </div>
-
 
             <div class="main_slider">
                 <div class="main_slider-control --prev">
@@ -924,8 +921,10 @@
                     </div>
                 </div>
 
+                <div class="main_slider-btn">
+                    <span>Все кейсы</span>
+                </div>
             </div>
-
 
         </section>
     

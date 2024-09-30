@@ -94,6 +94,7 @@ function swiperInit() {
     const SliderThumbs = new Glide('#thumbs-slider',{
         type: 'carousel',
         perView: 6,
+        perTouch: 1,
         focusAt: 'center',
     });
     SliderThumbs.mount();
@@ -108,12 +109,20 @@ function swiperInit() {
             SliderThumbs.go('=' + swiperSlider.realIndex);
 
         index_slide = swiperSlider.realIndex;
+
+        console.log(index_slide);
+
     });
 
     swiperSlider.on('slideNextTransitionEnd', function () {        
         SliderThumbs.go('=' + swiperSlider.realIndex);
         index_slide = swiperSlider.realIndex;
     });
+
+    //Переключение слайдера карточек при изменении trumbs
+    SliderThumbs.on('run', function() {
+        swiperSlider.slideToLoop(SliderThumbs.index);
+    })
 
     
 
@@ -212,12 +221,14 @@ function setWrapHeight() {
 }
 
 //Фикс прокрутки вверх после слайдера
-window.addEventListener('scroll', function(){
-    if(swiperTicker.activeIndex == swiperItems.length - 1){
-        swiperTicker.enabled = false;
+if(window.innerWidth > 650){
+    window.addEventListener('scroll', function(){
+        if(swiperTicker.activeIndex == swiperItems.length - 1){
+            swiperTicker.enabled = false;
 
-        if(window.scrollY == 0){
-            swiperTicker.enabled = true;
+            if(window.scrollY == 0){
+                swiperTicker.enabled = true;
+            }
         }
-    }
-});
+    });
+}

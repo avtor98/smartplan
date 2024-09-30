@@ -1,4 +1,3 @@
-//var CardScrollTop = 0;
 //const $body = document.querySelector('body');
 
 //Высота главной кнопки
@@ -26,7 +25,9 @@ let scroll_horiz = horizontal_w - window.innerWidth + 300;
 //Начальная установка padding (Сколько необходимо скрола)
 document.querySelector('.main_page-horizontal').style.setProperty('padding-bottom', scroll_horiz + 'px');
 
-console.log(scroll_to_horizontal);
+//Растояние до Боль-решение в мобильной версии
+let videoScrollTop = 0;
+
 
 
 //------------------------------------------------------
@@ -64,7 +65,7 @@ window.addEventListener('scroll', function(){
             //Главная кнопка
             document.querySelector('.main_page-btn').classList.add('--show');        
 
-            if(scrollTop < containerHeight + margin_card)
+            if(scrollTop < containerHeight + margin_card - 10)
                 setTransition(1);
             else{
                 if(scrollTop < containerHeight + 2 * margin_card)
@@ -117,7 +118,7 @@ window.addEventListener('scroll', function(){
         //Расстояние до блока горизонтального скролла (если изменилась высота экрана)
         scroll_to_horizontal = document.querySelector('.main_page-horizontal').getBoundingClientRect().top + window.scrollY;
 
-        if (scrollTop > scroll_to_horizontal){
+        if (scrollTop > (scroll_to_horizontal)){
             document.querySelector('.main_page-horizontal-wrap').classList.add('--fixed');
             document.querySelector('.main_page-horizontal-wrap').style.transform = ``;
             
@@ -154,7 +155,73 @@ window.addEventListener('scroll', function(){
 
     }
     else{//----------------МОБИЛЬНАЯ ВЕРСИЯ------------------------
+        videoScrollTop = document.querySelector('.visibility-actions.--mobile').getBoundingClientRect().top + window.scrollY;
+        //console.log(videoScrollTop);        
 
+        //Боль - Решение
+        if (scrollTop < videoScrollTop + 80)
+            document.querySelector('.visibility-actions.--mobile').style.setProperty('--fill-percent', 0);            
+        if (scrollTop > videoScrollTop + 80)
+            document.querySelector('.visibility-actions.--mobile').style.setProperty('--fill-percent', 1);    
+        
+        if (window.innerWidth > 639){
+            //Карточки
+            let containerHeight = window.innerHeight;
+            let scroll_to_block = videoScrollTop + margin_card;        
+
+            if(scrollTop > scroll_to_block && scrollTop <= scroll_to_block + (2 * containerHeight + 4 * margin_card )){            
+                //Background карточек
+                document.querySelector('.main_page-cards .main_page-cards-bg').style.position = 'fixed';
+                document.querySelector('.main_page-cards .main_page-cards-bg').style.opacity = '1';
+
+                //Главная кнопка
+                document.querySelector('.main_page-btn').classList.add('--show');        
+
+                if(scrollTop <= scroll_to_block + margin_card)
+                    setTransition(1);
+                else{
+                    if(scrollTop < scroll_to_block + 2 * margin_card)
+                        setTransition(2);
+                    else{
+                        if(scrollTop < scroll_to_block + 3 * margin_card)
+                            setTransition(3);
+                        else{
+                            if(scrollTop < scroll_to_block + 4 * margin_card ){
+                                setTransition(4);
+                                cards[0].style.transform = ``;
+                                cards[1].style.transform = ``;
+                                cards[2].style.transform = ``;
+                                cards[3].style.transform = ``;
+                                cards[4].style.transform = ``;
+                                document.querySelector('.main_page-cards .main_page-cards-bg').style.transform = ``;
+                                document.querySelector('.main_page-cards .main_page-cards-bg').style.transition = ``;
+
+                            }
+                            else{
+                                if(scrollTop < scroll_to_block + containerHeight + 4 * margin_card){
+                                    setTransition(5);
+                                    
+                                    cards[0].style.transform = `translate(-50%, calc(-50% - ${(scrollTop - (scroll_to_block + 4 * margin_card))}px))`;
+                                    cards[1].style.transform = `translate(-50%, calc(-50% - ${(scrollTop - (scroll_to_block + 4 * margin_card))}px))`;
+                                    cards[2].style.transform = `translate(-50%, calc(-50% - ${(scrollTop - (scroll_to_block + 4 * margin_card))}px))`;
+                                    cards[3].style.transform = `translate(-50%, calc(-50% - ${(scrollTop - (scroll_to_block + 4 * margin_card))}px))`;
+                                    cards[4].style.transform = `translate(-50%, calc(-50% - ${(scrollTop - (scroll_to_block + 4 * margin_card))}px))`;
+                                
+                                    document.querySelector('.main_page-cards .main_page-cards-bg').style.transform = `translateY(calc(50% - ${(scrollTop - (scroll_to_block + 4 * margin_card))}px))`;
+                                    document.querySelector('.main_page-cards .main_page-cards-bg').style.transition = `none`;
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+            else{
+                setTransition(0);
+                document.querySelector('.main_page-cards .main_page-cards-bg').style = '';
+                document.querySelector('.main_page-btn').classList.remove('--show');
+            }
+        }
+       
     }
     
     
@@ -181,6 +248,13 @@ function setTransition(indexFixed){
 
 //Функция изменения контрольных точек
 function setBreakpoint(){
+    //Высота главной кнопки
+    btn_size = document.querySelector('.main_page-btn').scrollHeight;
+    //Начальный размер карточек
+    card_size = document.querySelector('.main_page-cards .main_page-card').scrollHeight;
+    //Начальный отступ
+    document.querySelector('.main_page-cards').style.setProperty('--card-margin', ((window.innerHeight - card_size) / 2) + 'px');
+
     //Ширина блока горизонтального скролла
     horizontal_w = horizontal.offsetWidth;
     scroll_horiz = horizontal_w - window.innerWidth + 300; 
@@ -195,5 +269,11 @@ function setBreakpoint(){
     else{
         document.querySelector('.main_page-horizontal-wrap').classList.remove('--fixed');
         horizontal.style.transform = ``;
+    }
+
+    if (window.innerWidth <= 639){
+        setTransition(0);
+        document.querySelector('.main_page-cards .main_page-cards-bg').style = '';
+        document.querySelector('.main_page-btn').classList.remove('--show');
     }
 }

@@ -8,4 +8,5 @@ import './modules/window-scroll.js'
 //import './sms.js';
 //import './validate.js';
 //import './animate.js'
-import "jquery-mask-plugin";
+
+//import "jquery-mask-plugin";
