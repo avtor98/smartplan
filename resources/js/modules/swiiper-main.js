@@ -73,59 +73,6 @@ function swiperInit() {
 
     document.querySelector('.main-block-content-menu').style.removeProperty('opacity');
     document.querySelector('.main_page-slider-btn').style.removeProperty('opacity');
-
-    //Слайдер карточек
-    const swiperSlider = new Swiper('#main-slider', {
-        modules: [Navigation],
-        spaceBetween: 0,
-        centeredSlides: true,
-        allowTouchMove: false, 
-        loop: true,
-        preventInteractionOnTransition: true,
-
-        navigation: {
-            nextEl: '.main_slider-control.--next',
-            prevEl: '.main_slider-control.--prev',
-        },
-    });
-    index_slide = 0;
-
-    //Слайдер карточек thumbs
-    const SliderThumbs = new Glide('#thumbs-slider',{
-        type: 'carousel',
-        perView: 6,
-        perTouch: 1,
-        focusAt: 'center',
-    });
-    SliderThumbs.mount();
-
-    //Переключение слайдера карточек thumbs
-    swiperSlider.on('realIndexChange', function () {        
-        if (swiperSlider.realIndex == swiperSlider.slides.length - 1 && index_slide == 0)
-            SliderThumbs.go('<');
-        else if (swiperSlider.realIndex == 0 && index_slide == swiperSlider.slides.length - 1)
-            SliderThumbs.go('>');
-        else
-            SliderThumbs.go('=' + swiperSlider.realIndex);
-
-        index_slide = swiperSlider.realIndex;
-
-        console.log(index_slide);
-
-    });
-
-    swiperSlider.on('slideNextTransitionEnd', function () {        
-        SliderThumbs.go('=' + swiperSlider.realIndex);
-        index_slide = swiperSlider.realIndex;
-    });
-
-    //Переключение слайдера карточек при изменении trumbs
-    SliderThumbs.on('run', function() {
-        swiperSlider.slideToLoop(SliderThumbs.index);
-    })
-
-    
-
 };
 
 //Создание пагинации
@@ -232,3 +179,64 @@ if(window.innerWidth > 650){
         }
     });
 }
+
+//Слайдер карточек
+const swiperSlider = new Swiper('#main-slider', {
+    modules: [Navigation],
+    spaceBetween: 0,
+    centeredSlides: true,
+    allowTouchMove: false, 
+    loop: true,
+    preventInteractionOnTransition: true,
+
+    navigation: {
+        nextEl: '.main_slider-control.--next',
+        prevEl: '.main_slider-control.--prev',
+    },
+});
+index_slide = 0;
+
+//Слайдер карточек thumbs
+const SliderThumbs = new Glide('#thumbs-slider',{
+    type: 'carousel',
+    perView: 6,
+    perTouch: 1,
+    focusAt: 'center',
+    breakpoints: {
+      960: {
+          perView: 4
+        },
+      638: {
+        perView: 3
+      },
+      480: {
+        perView: 1
+      }
+    },
+});
+SliderThumbs.mount();
+
+//Переключение слайдера карточек thumbs
+swiperSlider.on('realIndexChange', function () {        
+    if (swiperSlider.realIndex == swiperSlider.slides.length - 1 && index_slide == 0)
+        SliderThumbs.go('<');
+    else if (swiperSlider.realIndex == 0 && index_slide == swiperSlider.slides.length - 1)
+        SliderThumbs.go('>');
+    else
+        SliderThumbs.go('=' + swiperSlider.realIndex);
+
+    index_slide = swiperSlider.realIndex;
+
+    console.log(index_slide);
+
+});
+
+swiperSlider.on('slideNextTransitionEnd', function () {        
+    SliderThumbs.go('=' + swiperSlider.realIndex);
+    index_slide = swiperSlider.realIndex;
+});
+
+//Переключение слайдера карточек при изменении trumbs
+SliderThumbs.on('run', function() {
+    swiperSlider.slideToLoop(SliderThumbs.index);
+})

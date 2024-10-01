@@ -920,10 +920,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="main_slider-btn">
-                    <span>Все кейсы</span>
-                </div>
             </div>
 
         </section>

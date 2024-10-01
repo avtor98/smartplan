@@ -22,8 +22,10 @@ let scroll_to_horizontal = document.querySelector('.main_page-horizontal').getBo
 let horizontal_w = horizontal.offsetWidth;
 //Скролл блока в px
 let scroll_horiz = horizontal_w - window.innerWidth + 300;
+
 //Начальная установка padding (Сколько необходимо скрола)
-document.querySelector('.main_page-horizontal').style.setProperty('padding-bottom', scroll_horiz + 'px');
+if (window.innerWidth >= 480)
+    document.querySelector('.main_page-horizontal').style.setProperty('padding-bottom', scroll_horiz + 'px');
 
 //Растояние до Боль-решение в мобильной версии
 let videoScrollTop = 0;
@@ -255,21 +257,24 @@ function setBreakpoint(){
     //Начальный отступ
     document.querySelector('.main_page-cards').style.setProperty('--card-margin', ((window.innerHeight - card_size) / 2) + 'px');
 
-    //Ширина блока горизонтального скролла
-    horizontal_w = horizontal.offsetWidth;
-    scroll_horiz = horizontal_w - window.innerWidth + 300; 
-    //Начальная установка padding (если изменилась ширина экрана)
-    document.querySelector('.main_page-horizontal').style.setProperty('padding-bottom', scroll_horiz + 'px');
-    //Расстояние до блока горизонтального скролла (если изменилась высота экрана)
-    scroll_to_horizontal = document.querySelector('.main_page-horizontal').getBoundingClientRect().top + window.scrollY;
-        
-    if (window.scrollY > scroll_to_horizontal){
-        document.querySelector('.main_page-horizontal-wrap').classList.add('--fixed');
+    if (window.innerWidth >= 480){
+        //Ширина блока горизонтального скролла
+        horizontal_w = horizontal.offsetWidth;
+        scroll_horiz = horizontal_w - window.innerWidth + 300; 
+        //Начальная установка padding (если изменилась ширина экрана)
+        document.querySelector('.main_page-horizontal').style.setProperty('padding-bottom', scroll_horiz + 'px');
+        //Расстояние до блока горизонтального скролла (если изменилась высота экрана)
+        scroll_to_horizontal = document.querySelector('.main_page-horizontal').getBoundingClientRect().top + window.scrollY;
+            
+        if (window.scrollY > scroll_to_horizontal){
+            document.querySelector('.main_page-horizontal-wrap').classList.add('--fixed');
+        }
+        else{
+            document.querySelector('.main_page-horizontal-wrap').classList.remove('--fixed');
+            horizontal.style.transform = ``;
+        }
     }
-    else{
-        document.querySelector('.main_page-horizontal-wrap').classList.remove('--fixed');
-        horizontal.style.transform = ``;
-    }
+
 
     if (window.innerWidth <= 639){
         setTransition(0);
