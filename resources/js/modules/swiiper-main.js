@@ -21,7 +21,7 @@ let swiperTicker, direction, index_slide;
 setWrapHeight();
 createPagination(swiperContainer);
 
-if(window.innerWidth > 650)
+//if(window.innerWidth > 650)
     swiperInit();
 
 document.documentElement.classList.add('--no-slide');

@@ -143,8 +143,10 @@
                             для девелоперов,
                             <span>в которой есть все</span></h1>
                     </div>
-                    <div class="main_page-slider-btn">
-                        <span>Попробовать бесплатно</span>
+                    <div class="main_page-slider-btn-wrap">
+                        <div class="main_page-slider-btn">
+                            <span>Попробовать бесплатно</span>
+                        </div>
                     </div>
                     <div class="main-block-content-menu">
                         <a href="/" class="main-block-content-menu-link">
@@ -257,10 +259,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="main_page-btn">
-                <span>Рассказать о своей боли</span>
             </div>
 
             <div class="main_page-cards">
@@ -565,10 +563,6 @@
                             
                         </div>
                     </div>
-                </div>
-
-                <div class="main_page-btn --finally">
-                    <span>Рассказать о своей боли</span>
                 </div>
             </div>
 
@@ -919,6 +913,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="main_page-btn-wrap">
+                <div class="main_page-btn">
+                    <span>Попробовать бесплатно</span>
                 </div>
             </div>
 
